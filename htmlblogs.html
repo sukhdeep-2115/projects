@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SukhBlogs</title>
+
+  
+   <!-- <link rel="stylesheet" href="style.css"> -->
+
+
+
+   <style>
+
+ 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+    
+}
+
+
+
+.container2{
+    color: #0080ff;
+    font-size: 1.8rem;
+    font-family:'Times New Roman', Times, serif ;
+    display: flex;
+    
+    
+}
+
+.navbar{
+    display: flex;
+    width: 100%;
+    height: 3.6rem;
+   background-color: #ededed;
+    justify-content: space-around;
+    align-items: center;
+    
+    border: 1px solid rgb(239, 239, 239);
+    
+}
+.list{
+    display: flex;
+    list-style: none;
+    gap: 1.42rem;
+    font-size: 1.3rem;
+    
+    
+    
+}
+
+.navbar a{
+    text-decoration: none;
+    color:#ff7402b1;
+}
+
+
+
+
+
+.container{
+    max-width: 80%;
+    padding: 1.5rem 1rem 0.05rem 1rem;
+    margin:auto;
+    
+   
+}
+
+
+.header_title{
+    text-align: center;
+    color: rgb(32, 32, 32);
+ 
+}
+
+.header_desc{
+    font-size: 0.9rem;
+    max-width: 490px;
+    margin:0 auto;
+    text-align: center;
+    padding:10px ;
+    color: rgb(100, 99, 99);
+    
+
+}
+
+.main_container{
+    display: grid;
+    /* border: 1px solid rgb(241, 237, 237); */
+    grid-template-columns:repeat(4, 1fr) ;
+    
+    
+}
+
+
+.card_container{
+    border: 1px solid rgb(212, 209, 209);
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 253, 253); 
+    margin: 0.8rem;
+  
+}
+
+
+
+
+.card_container:hover .image_container{
+    transform: scale(0.9);
+}
+
+
+.image_container{
+    position: relative;
+    height: 11rem;
+    margin-bottom: 0.2rem;
+    transition: all 0.3s ease;
+}
+
+.image_card{
+    object-fit: cover;
+    object-position: center;
+    position: absolute; 
+    height: 100%;
+    width: 100%;
+   
+}
+
+.info{
+    max-width:190px;
+    font-size: 0.6rem;
+    margin: 5px 1.1rem;
+    color: rgb(44, 44, 44);
+}
+
+.info_title{
+    margin: 5.9px 0;
+}
+
+.info_title:hover{
+    color: rgb(39, 39, 125);
+}
+
+.footer_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+}
+
+.footer_image{
+    display: flex;
+    align-items: center;
+}
+
+.footer_img{
+    border-radius: 50%;
+    border: 1px  rgb(211, 204, 204);
+    height: 2.1rem;
+    background-color: rgb(242, 236, 236);
+    
+}
+
+.footer_data{
+    font-size: 0.4rem;
+    margin: 4px;
+    color: rgb(107, 111, 111);
+   
+}
+
+.footer_data h2{
+    color: rgb(54, 54, 157);
+}
+.button{
+   
+    border: 1px solid rgb(206, 199, 199);
+   padding: 0.2rem;
+   font-size: 0.7rem;
+   color: rgb(81, 81, 81);
+}
+
+.main_footer{
+
+  
+  text-align: center;
+   background-color: rgb(255, 253, 253); 
+  border: 1px solid rgb(212, 209, 209);
+
+
+}
+
+.footer_div{
+  display: flex;
+  justify-content: center;
+  
+}
+
+
+/* ===== RESPONSIVE STYLES ===== */
+@media screen and (max-width: 1200px) {
+    .main_container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+   
+  }
+  
+
+
+
+
+
+
+@media screen and (max-width: 950px) {
+    .main_container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .info {
+        max-width: 190px;
+        font-size: 0.55rem;
+    }
+
+
+
+    
+.para1{
+    font-size: 2.1rem;
+  
+   
+  }
+
+  .list a{
+    color:#fba105ea;
+  }
+  .navbar {
+    font-size: 1.2rem;
+    flex-direction: column;
+    align-items: center;
+    
+    height: auto;
+  }
+
+  .list {
+    
+    gap: 12px;
+  } 
+
+  }
+
+@media screen and (max-width: 530px) {
+    .main_container {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 1rem;
+    }
+
+    .header_desc {
+        font-size: 0.8rem;
+    }
+
+    .info {
+        max-width: 100%;
+        font-size: 0.5rem;
+        margin: 5px 0.5rem;
+    }
+
+    .footer_data {
+        font-size: 0.35rem;
+    }
+
+    .button {
+        font-size: 0.6rem;
+        padding: 0.15rem;
+    }
+
+    .main_footer{
+      font-size: 0.6rem;
+    }
+
+
+
+
+        .container {
+        max-width: 100%;
+        padding: 1rem;
+    }
+
+
+.para1{
+  font-size: 1.2rem;
+}
+  .list a{
+    color:#5a00a8;
+    font-size: 0.9rem;
+  }
+
+  .navbar {
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+    
+  }
+
+
+}
+
+
+
+
+</style>
+ 
+</head>
+<body >
+
+
+
+<header>
+            <div class="container2">
+                <nav class="navbar">
+
+                    <p class="para1">
+                        Welcome to Sukhdeep's Blogs
+                    </p>
+
+
+                    <ul class="list">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="contact.html" target="_blank">Contact Me</a></li>
+                        <li><a href="about.html" target="_blank">About Us</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </header>
+
+
+
+  <div class="container">
+
+
+
+    
+    <div class="header_container">
+      <h2 class="header_title">SukhBlogs</h2>
+      <p class="header_desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat natus cum in suscipit rerum officia!</p>
+    </div>
+
+    <main class="main_container">
+
+      <!-- card 1 start here -->
+      <div class="card_container">
+
+        <div class="image_container">
+
+          <a href="#">  
+            <img class="image_card" src= "https://as2.ae/wp-content/uploads/2024/10/Gadgets-Examples.webp"alt="technology">
+            
+          </a>
+
+        </div>
+          
+        <div class="info">
+          <h2 class="info_title">New Gadget released</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, cupiditate Lorem ipsum dolor sit amet.
+
+          </p>
+        </div>
+
+        <div class="footer_container">
+
+          <div class="footer_image">
+            <img class="footer_img" src="https://api.dicebear.com/9.x/adventurer/svg?seed=random" alt="Random Avatar">
+
+
+            
+            <div class="footer_data">
+              <h2>Joe Smith</h2>
+              <p>Oct,21 2025</p>
+            </div>
+            
+          </div>
+
+          <div class="footer_button" >
+            <button class="button">Technology</button> </p>
+          </div>
+
+
+
+        </div>
+
+
+      </div>
+        <!-- card 1 end here -->
+
+
+        <!-- card 2 start here -->
+      <div class="card_container">
+
+        <div class="image_container">
+
+          <a href="#">  
+            <img class="image_card" src= "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bnV0cml0aW9ufGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600"alt="technology">
+            
+          </a>
+
+        </div>
+          
+        <div class="info">
+          <h2 class="info_title">New Gadget released</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, cupiditate Lorem ipsum dolor sit amet.
+
+          </p>
+        </div>
+
+        <div class="footer_container">
+
+          <div class="footer_image">
+            <img class="footer_img" src="https://api.dicebear.com/9.x/adventurer/svg?seed=random" alt="Random Avatar">
+
+
+            
+            <div class="footer_data">
+              <h2>Joe Smith</h2>
+              <p>Oct,21 2025</p>
+            </div>
+            
+          </div>
+
+          <div class="footer_button" >
+            <button class="button">Technology</button> </p>
+          </div>
+
+
+
+        </div>
+
+
+      </div>
+        <!-- card 2 end here -->
+
+
+        <!-- card 3 start here -->
+      <div class="card_container">
+
+        <div class="image_container">
+
+          <a href="#">  
+            <img class="image_card" src= "https://images.unsplash.com/photo-1542362567-b07e54358753?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNhcnN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600"alt="technology">
+            
+          </a>
+
+        </div>
+          
+        <div class="info">
+          <h2 class="info_title">New Gadget released</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, cupiditate Lorem ipsum dolor sit amet.
+
+          </p>
+        </div>
+
+        <div class="footer_container">
+
+          <div class="footer_image">
+            <img class="footer_img" src="https://api.dicebear.com/9.x/adventurer/svg?seed=random" alt="Random Avatar">
+
+
+            
+            <div class="footer_data">
+              <h2>Joe Smith</h2>
+              <p>Oct,21 2025</p>
+            </div>
+            
+          </div>
+
+          <div class="footer_button" >
+            <button class="button">Technology</button> </p>
+          </div>
+
+
+
+        </div>
+
+
+      </div>
+        <!-- card 3 end here -->
+
+
+
+        <!-- card 4 start here -->
+      <div class="card_container">
+
+        <div class="image_container">
+
+          <a href="#">  
+            <img class="image_card" src= "https://images.unsplash.com/photo-1527430253228-e93688616381?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cm9ib3R8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600"alt="technology">
+            
+          </a>
+
+        </div>
+          
+        <div class="info">
+          <h2 class="info_title">New Gadget released</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, cupiditate Lorem ipsum dolor sit amet.
+
+          </p>
+        </div>
+
+        <div class="footer_container">
+
+          <div class="footer_image">
+            <img class="footer_img" src="https://api.dicebear.com/9.x/adventurer/svg?seed=random" alt="Random Avatar">
+
+
+            
+            <div class="footer_data">
+              <h2>Joe Smith</h2>
+              <p>Oct,21 2025</p>
+            </div>
+            
+          </div>
+
+          <div class="footer_button" >
+            <button class="button">Technology</button> </p>
+          </div>
+
+
+
+        </div>
+
+
+      </div>
+        <!-- card 4 end here -->
+
+
+
+
+        <!-- card 5 start here -->
+      <div class="card_container">
+
+        <div class="image_container">
+
+          <a href="#">  
+            <img class="image_card" src= "https://hips.hearstapps.com/hmg-prod/images/healthy-groceries-bag-66eaef810acf6.jpg?crop=0.564xw:1.00xh;0.295xw,0&resize=1200:*"alt="technology">
+            
+          </a>
+
+        </div>
+          
+        <div class="info">
+          <h2 class="info_title">New Gadget released</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, cupiditate Lorem ipsum dolor sit amet.
+
+          </p>
+        </div>
+
+        <div class="footer_container">
+
+          <div class="footer_image">
+            <img class="footer_img" src="https://api.dicebear.com/9.x/adventurer/svg?seed=random" alt="Random Avatar">
+
+
+            
+            <div class="footer_data">
+              <h2>Joe Smith</h2>
+              <p>Oct,21 2025</p>
+            </div>
+            
+          </div>
+
+          <div class="footer_button" >
+            <button class="button">Technology</button> </p>
+          </div>
+
+
+
+        </div>
+
+
+      </div>
+        <!-- card 5 end here -->
+
+
+
+        <!-- card 6 start here -->
+      <div class="card_container">
+
+        <div class="image_container">
+
+          <a href="#">  
+            <img class="image_card" src= "https://images.unsplash.com/photo-1666038100482-8f7d2bde9711?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDR8fGNvbnN0cnVjdGlvbiUyMHRlY2hubG9neXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600"alt="technology">
+            
+          </a>
+
+        </div>
+          
+        <div class="info">
+          <h2 class="info_title">New Gadget released</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, cupiditate Lorem ipsum dolor sit amet.
+
+          </p>
+        </div>
+
+        <div class="footer_container">
+
+          <div class="footer_image">
+            <img class="footer_img" src="https://api.dicebear.com/9.x/adventurer/svg?seed=random" alt="Random Avatar">
+
+
+            
+            <div class="footer_data">
+              <h2>Joe Smith</h2>
+              <p>Oct,21 2025</p>
+            </div>
+            
+          </div>
+
+          <div class="footer_button" >
+            <button class="button">Technology</button> </p>
+          </div>
+
+
+
+        </div>
+
+
+      </div>
+        <!-- card 6 end here -->
+
+
+
+
+        <!-- card 7 start here -->
+      <div class="card_container">
+
+        <div class="image_container">
+
+          <a href="#">  
+            <img class="image_card" src= "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGxhcHRvcHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600"alt="laptop">
+            
+          </a>
+
+        </div>
+          
+        <div class="info">
+          <h2 class="info_title">New Gadget released</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, cupiditate Lorem ipsum dolor sit amet.
+
+          </p>
+        </div>
+
+        <div class="footer_container">
+
+          <div class="footer_image">
+            <img class="footer_img" src="https://api.dicebear.com/9.x/adventurer/svg?seed=random" alt="Random Avatar">
+
+
+            
+            <div class="footer_data">
+              <h2>Joe Smith</h2>
+              <p>Oct,21 2025</p>
+            </div>
+            
+          </div>
+
+          <div class="footer_button" >
+            <button class="button">Technology</button> </p>
+          </div>
+
+
+
+        </div>
+
+
+      </div>
+        <!-- card 7 end here -->
+
+
+
+
+        <!-- card 8 start here -->
+      <div class="card_container">
+
+        <div class="image_container">
+
+          <a href="#">  
+            <img class="image_card" src= "https://images.unsplash.com/photo-1646322472333-202e9887e15f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODl8fHRlY2hubG9neXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600"alt="technology">
+            
+          </a>
+
+        </div>
+          
+        <div class="info">
+          <h2 class="info_title">New Gadget released</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, cupiditate Lorem ipsum dolor sit amet.
+
+          </p>
+        </div>
+
+        <div class="footer_container">
+
+          <div class="footer_image">
+            <img class="footer_img" src="https://api.dicebear.com/9.x/adventurer/svg?seed=random" alt="Random Avatar">
+
+
+            
+            <div class="footer_data">
+              <h2>Joe Smith</h2>
+              <p>Oct,21 2025</p>
+            </div>
+            
+          </div>
+
+          <div class="footer_button" >
+            <button class="button">Technology</button> </p>
+          </div>
+
+
+
+        </div>
+
+
+      </div>
+        <!-- card 8 end here -->
+
+
+ <!-- card 9 start here -->
+      <div class="card_container">
+
+        <div class="image_container">
+
+          <a href="#">  
+            <img class="image_card" src= "https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWl8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600"alt="technology">
+            
+          </a>
+
+        </div>
+          
+        <div class="info">
+          <h2 class="info_title">New Gadget released</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, cupiditate Lorem ipsum dolor sit amet.
+
+          </p>
+        </div>
+
+        <div class="footer_container">
+
+          <div class="footer_image">
+            <img class="footer_img" src="https://api.dicebear.com/9.x/adventurer/svg?seed=random" alt="Random Avatar">
+
+
+            
+            <div class="footer_data">
+              <h2>Joe Smith</h2>
+              <p>Oct,21 2025</p>
+            </div>
+            
+          </div>
+
+          <div class="footer_button" >
+            <button class="button">Technology</button> </p>
+          </div>
+
+
+
+        </div>
+
+
+      </div>
+        <!-- card 9 end here -->
+        
+
+
+        <!-- card 10 start here -->
+      <div class="card_container">
+
+        <div class="image_container">
+
+          <a href="#">  
+            <img class="image_card" src= "https://images.unsplash.com/photo-1538388149542-5e24932d11a8?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjZ8fGZ1dHVyZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600"alt="technology">
+            
+          </a>
+
+        </div>
+          
+        <div class="info">
+          <h2 class="info_title">New Gadget released</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, cupiditate Lorem ipsum dolor sit amet.
+
+          </p>
+        </div>
+
+        <div class="footer_container">
+
+          <div class="footer_image">
+            <img class="footer_img" src="https://api.dicebear.com/9.x/adventurer/svg?seed=random" alt="Random Avatar">
+
+
+            
+            <div class="footer_data">
+              <h2>Joe Smith</h2>
+              <p>Oct,21 2025</p>
+            </div>
+            
+          </div>
+
+          <div class="footer_button" >
+            <button class="button">Technology</button> </p>
+          </div>
+
+
+
+        </div>
+
+
+      </div>
+        <!-- card 10 end here -->
+
+
+
+
+        <!-- card 11 start here -->
+      <div class="card_container">
+
+        <div class="image_container">
+
+          <a href="#">  
+            <img class="image_card" src= "https://plus.unsplash.com/premium_photo-1673138808212-f44935ec2c96?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dmlzaW9ufGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600"alt="technology">
+            
+          </a>
+
+        </div>
+          
+        <div class="info">
+          <h2 class="info_title">New Gadget released</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, cupiditate Lorem ipsum dolor sit amet.
+
+          </p>
+        </div>
+
+        <div class="footer_container">
+
+          <div class="footer_image">
+            <img class="footer_img" src="https://api.dicebear.com/9.x/adventurer/svg?seed=random" alt="Random Avatar">
+
+
+            
+            <div class="footer_data">
+              <h2>Joe Smith</h2>
+              <p>Oct,21 2025</p>
+            </div>
+            
+          </div>
+
+          <div class="footer_button" >
+            <button class="button">Technology</button> </p>
+          </div>
+
+
+
+        </div>
+
+
+      </div>
+        <!-- card 11 end here -->
+
+
+
+
+
+
+        <!-- card 12 start here -->
+      <div class="card_container">
+
+        <div class="image_container">
+
+          <a href="#">  
+            <img class="image_card" src= "https://images.unsplash.com/photo-1633158834806-766387547d2c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fGdvYWx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600"alt="technology">
+            
+          </a>
+
+        </div>
+          
+        <div class="info">
+          <h2 class="info_title">New Gadget released</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, cupiditate Lorem ipsum dolor sit amet.
+
+          </p>
+        </div>
+
+        <div class="footer_container">
+
+          <div class="footer_image">
+            <img class="footer_img" src="https://api.dicebear.com/9.x/adventurer/svg?seed=random" alt="Random Avatar">
+
+
+            
+            <div class="footer_data">
+              <h2>Joe Smith</h2>
+              <p>Oct,21 2025</p>
+            </div>
+            
+          </div>
+
+          <div class="footer_button" >
+            <button class="button">Technology</button> </p>
+          </div>
+
+
+
+        </div>
+
+
+      </div>
+        <!-- card 12 end here -->
+
+
+    </main>
+
+  </div>
+
+    <footer class="main_footer">
+      <div class="footer_div">
+
+        <p class="footer_para">All Rights are reserverd by SukhBlog's</p>
+        
+    </div>
+</footer>
+  
+</body>
+</html>
