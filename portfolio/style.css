@@ -351,9 +351,7 @@ form input, form textarea{
         }
    
 
-.hero{
-    padding: 0 20px;
-}
+
 
         .skill-section p {
             font-size: 14px;
@@ -416,6 +414,10 @@ form input, form textarea{
      .testimony h2{
         font-size: 23px;
      }
+
+  .hero{
+    padding: 0 20px;
+}
 
      .testimony{
         padding: 0 20px;
@@ -481,3 +483,4 @@ form input, form textarea{
 
 
  }
+
