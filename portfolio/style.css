@@ -19,6 +19,8 @@
  body {
      font-family: 'Poppins', sans-serif;
      background-color: var(--background-color);
+     max-width: 1400px;
+     margin: 0 auto;
 
  }
 
@@ -190,105 +192,174 @@
  }
 
 
- @media (max-width:700px) {
-     .hero h2 {
-         font-size: 25px;
-     }
-
-     .hero p {
-         font-size: 14px;
-     }
-
-
-     .skill-section h2 {
-         font-size: 23px;
-     }
-
-     .skill-section p {
-         font-size: 14px;
-     }
-
-     .myimg img {
-         width: 200px;
-     }
-
- }
-
-
+ 
+ 
  /* section3 */
-
-
+ 
+ 
  .testimony {
      padding: 0 50px;
      margin-bottom: 100px;
- }
-
- .testimony h2 {
-     font-size: 33px;
-     margin-bottom: 10px;
-     text-align: center;
- }
+    }
+    
+    .testimony h2 {
+        font-size: 33px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
 
  .group {
-
+     
      display: flex;
      /* justify-content: center; */
      align-items: center;
      gap: 50px;
-
- }
-
- .group .details {
-
-     text-align: center;
-     flex: 2;
- }
-
- .testi-text {
-
-     flex: 8;
- }
-
- .details img {
-     width: 180px;
-     border-radius: 50%;
-     /* padding-top: 20px; */
-     margin-bottom: 10px;
-
- }
-
- .details p {
-     font-weight: 600;
- }
-
- .details p:last-child {
-     font-weight: normal;
- }
-
-
- @media (max-width:740px) {
-     .text h2 {
-         font-size: 28px;
-     }
-
-     .details img {
-         margin-top: 20px;
-         width: 155px;
-     }
-
-     .testi-text {
-         font-size: 14px;
-     }
-
-     .group {
-         gap: 25px;
-     }
-
- }
+     
+    }
+    
+    .group .details {
+        
+        text-align: center;
+        flex: 2;
+    }
+    
+    .testi-text {
+        
+        flex: 8;
+    }
+    
+    .details img {
+        width: 180px;
+        border-radius: 50%;
+        /* padding-top: 20px; */
+        margin-bottom: 10px;
+        
+    }
+    
+    .details p {
+        font-weight: 600;
+    }
+    
+    .details p:last-child {
+        font-weight: normal;
+    }
+    
+    
 
 
 
 
+/* section4 */
+
+
+.contact-section{
+    padding: 0 50px;
+    margin-bottom: 100px; 
+
+}
+
+.contact-section h2{
+    font-size: 33px;
+    margin-bottom: 20px;
+}
+
+
+.contact-group{
+    display: flex;
+}
+
+.contact-text{
+    flex: 3;
+    margin-bottom: 50px;
+}
+
+form{
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+   
+}
+
+
+form input, form textarea{
+    font-family: 'Poppins', sans-serif;
+    border: 2px solid var(--link-color);
+    background-color: transparent;
+    padding: 10px;
+    margin-bottom: 15px;
+    outline: none;
+    resize: none;
+}
+    
+.contact-group button{
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    color: #eeeff1;
+    background-color: #4a76ee;
+    border: none;
+    height: 48px;
+    cursor: pointer;
+    transition: .1s;
+}
+    
+.contact-group button:hover{
+    filter: brightness(0.9);
+}   
+    
+    
+    @media (max-width:740px) {
+        .text h2 {
+            font-size: 28px;
+        }
+        
+        .details img {
+            margin-top: 20px;
+            width: 155px;
+        }
+        
+        .testi-text {
+            font-size: 14px;
+        }
+        
+        .group {
+            gap: 25px;
+        }
+        
+
+        /* section4 */
+        
+    .contact-group{
+        flex-direction: column;
+    }        
+
+    }
+    
+    
+    
+    @media (max-width:700px) {
+        .hero h2 {
+            font-size: 25px;
+        }
+   
+        .hero p {
+            font-size: 14px;
+        }
+   
+   
+        .skill-section h2 {
+            font-size: 23px;
+        }
+   
+        .skill-section p {
+            font-size: 14px;
+        }
+   
+        .myimg img {
+            width: 200px;
+        }
+   
+    }
+    
  @media (max-width:640px) {
 
      /* section1 */
@@ -340,6 +411,14 @@
      .testimony h2{
         font-size: 23px;
      }
+/* 
+     .testimony{
+        padding: 0 20px;
+     }
+
+     .contact-section{
+        padding: 0 20px;
+     } */
  }
 
  @media (max-width:560px) {
@@ -381,7 +460,8 @@
      /* section3 */
 
      .testi-text {
-         font-size: 13px;
+         font-size: 14px;
+         font-weight: 400;
      }
 
      .details p {
