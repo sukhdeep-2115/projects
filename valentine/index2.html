@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rose Day 🌹</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body{
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      min-height: 100vh;
+      color: #1f1f1f;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    nav{
+      width: 100%;
+      padding: 18px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.25);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.35);
+      z-index: 10;
+    }
+
+    .logo{
+      font-size: 22px;
+      font-weight: 700;
+      color: #b3002d;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links{
+      display: flex;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .nav-links a{
+      text-decoration: none;
+      color: #2b2b2b;
+      font-weight: 500;
+      transition: 0.25s;
+      font-size: 15px;
+    }
+
+    .nav-links a:hover{
+      color: #b3002d;
+    }
+
+    .btn{
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.25s;
+      font-size: 14px;
+    }
+
+    .btn-primary{
+      background: #b3002d;
+      color: white;
+      box-shadow: 0 10px 25px rgba(179,0,45,0.25);
+    }
+
+    .btn-primary:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(179,0,45,0.35);
+    }
+
+    /* Hero */
+    .hero{
+      padding: 70px 6% 50px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .tag{
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.35);
+      border: 1px solid rgba(255,255,255,0.5);
+      font-size: 14px;
+      width: fit-content;
+      margin-bottom: 14px;
+    }
+
+    .hero h1{
+      font-size: 52px;
+      line-height: 1.05;
+      color: #2b0a14;
+    }
+
+    .hero h1 span{
+      color: #b3002d;
+    }
+
+    .hero p{
+      margin-top: 14px;
+      font-size: 16px;
+      line-height: 1.7;
+      color: rgba(0,0,0,0.75);
+      max-width: 520px;
+    }
+
+    .hero-actions{
+      display: flex;
+      gap: 12px;
+      margin-top: 22px;
+      flex-wrap: wrap;
+    }
+
+    .btn-ghost{
+      background: rgba(255,255,255,0.35);
+      border: 1px solid rgba(255,255,255,0.55);
+      color: #2b2b2b;
+    }
+
+    .btn-ghost:hover{
+      transform: translateY(-2px);
+    }
+
+    /* Rose Card */
+    .rose-card{
+      background: rgba(255,255,255,0.35);
+      border: 1px solid rgba(255,255,255,0.55);
+      border-radius: 22px;
+      padding: 22px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .rose-card::before{
+      content:"";
+      position:absolute;
+      inset:-60px;
+      background: radial-gradient(circle at top right, rgba(255,255,255,0.7), transparent 55%);
+      transform: rotate(18deg);
+    }
+
+    .rose-img{
+      width: 100%;
+      height: 260px;
+      border-radius: 18px;
+      background: url(https://images.pexels.com/photos/21235196/pexels-photo-21235196/free-photo-of-silhouette-of-marriage-proposal.jpeg);
+      background-size: cover; /* change to contain if you want full image */
+      background-repeat: no-repeat;
+      background-position: center;
+      border: 1px solid rgba(255,255,255,0.55);
+      position: relative;
+      z-index: 1;
+    }
+
+    .rose-info{
+      margin-top: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .rose-info h2{
+      font-size: 22px;
+      color: #2b0a14;
+    }
+
+    .rose-info p{
+      font-size: 14px;
+      margin-top: 6px;
+      color: rgba(0,0,0,0.7);
+      line-height: 1.7;
+    }
+
+    /* Section */
+    .section{
+      padding: 30px 6% 70px;
+    }
+
+    .section h3{
+      font-size: 26px;
+      color: #2b0a14;
+      margin-bottom: 14px;
+    }
+
+    .cards{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .card{
+      background: rgba(255,255,255,0.35);
+      border: 1px solid rgba(255,255,255,0.55);
+      border-radius: 18px;
+      padding: 18px;
+      backdrop-filter: blur(14px);
+      transition: 0.25s;
+    }
+
+    .card:hover{
+      transform: translateY(-6px);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+    }
+
+    .emoji{
+      font-size: 30px;
+    }
+
+    .card h4{
+      margin-top: 10px;
+      font-size: 16px;
+      color: #2b0a14;
+    }
+
+    .card p{
+      margin-top: 6px;
+      font-size: 13px;
+      color: rgba(0,0,0,0.72);
+      line-height: 1.6;
+    }
+
+    /* Modal */
+    .modal{
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      padding: 18px;
+      z-index: 99;
+    }
+
+    .modal-box{
+      width: 100%;
+      max-width: 520px;
+      background: rgba(255,255,255,0.85);
+      border-radius: 18px;
+      padding: 18px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 30px 70px rgba(0,0,0,0.2);
+    }
+
+    .modal-box h2{
+      color: #2b0a14;
+      font-size: 20px;
+    }
+
+    .modal-box p{
+      margin-top: 8px;
+      color: rgba(0,0,0,0.75);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .modal-actions{
+      display: flex;
+      gap: 10px;
+      margin-top: 14px;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+
+    /* Footer */
+    footer{
+      text-align: center;
+      padding: 22px 6%;
+      background: rgba(255,255,255,0.25);
+      border-top: 1px solid rgba(255,255,255,0.35);
+      color: rgba(0,0,0,0.7);
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero{
+        grid-template-columns: 1fr;
+      }
+      .hero h1{
+        font-size: 42px;
+      }
+      .cards{
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Navbar fix (no menu) */
+    @media (max-width: 720px){
+
+      nav{
+        padding: 14px 4%;
+      }
+
+      .logo{
+        font-size: 18px;
+      }
+
+      .nav-links{
+        gap: 10px;
+      }
+
+      .nav-links a{
+        font-size: 13px;
+      }
+
+      .btn{
+        padding: 8px 12px;
+        font-size: 13px;
+      }
+    }
+
+    @media (max-width: 520px){
+      .cards{
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1{
+        font-size: 36px;
+      }
+
+      nav{
+        padding: 12px 3%;
+      }
+
+      .logo{
+        font-size: 16px;
+      }
+
+      .nav-links{
+        gap: 6px;
+      }
+
+      .nav-links a{
+        font-size: 12px;
+      }
+
+      .btn{
+        padding: 7px 10px;
+        font-size: 12px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">RoseDay 🌹</div>
+
+    <div class="nav-links">
+      <a href="#gift">Shayari</a>
+      <a href="#ideas">Moments</a>
+      <a href="mailto:sukhdeep1547@gmail.com"><button class="btn btn-primary" onclick="openModal()">Send a Rose</button></a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div>
+      <div class="tag">🌹 Happy Rose Day • To My Rose 🌹</div>
+
+      <h1 style="font-size: 22px;">To My Forever <span>Valentine</span>.</h1>
+
+      <p>
+        Just like today, I want to celebrate every Rose Day and every single moment with you.
+        Always be happy, my wife, and glow like flowers. Because your happiness is my happiness.
+        I want to see you bloom like a flower… My lovely flower 🐵🐒 💌
+      </p>
+
+      <div class="hero-actions">
+        <button class="btn btn-primary" onclick="openModal()">Always</button>
+        <button class="btn btn-ghost" onclick="scrollToSection('gift')">Mine ❤️</button>
+      </div>
+    </div>
+
+    <div class="rose-card" id="gift">
+      <div class="rose-img"></div>
+
+      <div class="rose-info">
+        <h2>❤️ Love Forever ❤️</h2>
+
+        <p>“I don’t know why… but you feel like my favorite rose 🌹❤️”</p>
+        <br>
+
+        <p>💕💕❤️ I love you, wife, so much 💕💕❤️</p>
+        <br>
+
+        <p>❤️ I promise I will treat you like a rose for the rest of my life.</p>
+        <br>
+
+        <p>
+          💕💕❤️ Is war phull ta ni de paya door hon karke,
+          par eh zaroor wada—life phulla wargi har din bana ke rakhan ga 💕💕❤️
+        </p>
+
+        <br>
+        <p style="font-weight: bold;">🌹 Shayari</p>
+
+        <p>
+          💕💕❤️ Gulaab ki tarah tumhe sambhal ke rakhunga,<br>
+          Kaanto se bhi tumhe bachaa ke rakhunga…<br>
+          Rose Day ho ya zindagi ka har din,<br>
+          Main tumhe apna bana ke rakhunga 💞
+        </p>
+
+        <br>
+        <p>❤️ Je pasand aaya ta return ch “I love you” da reply ta zaroor banta… 🌹</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Extra Image -->
+  <img
+    style="margin-left: 35px; border: 2px solid rgb(157, 146, 146); width: 78%; height: 260px; border-radius: 18px;"
+    src="https://m.media-amazon.com/images/I/61d0E9JgkAL._AC_UF894,1000_QL80_.jpg"
+    alt=""
+  >
+
+  <!-- Section -->
+  <section class="section" id="ideas">
+    <h3>Highlight Moments 🌸</h3>
+
+    <div class="cards">
+      <div class="card">
+        <div class="emoji">🌹</div>
+        <h4>First Rose 😁</h4>
+        <p>07 February 2024</p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">📱</div>
+        <h4>First Chat</h4>
+        <p>24 December 2026</p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">🍫</div>
+        <h4>Favourite Chocolate</h4>
+        <p>KitKat... But mine is you, Bandri 💕💕❤️</p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">🌤️</div>
+        <h4>Memorable Day</h4>
+        <p>
+          Jdo menu 1st time “I love you too” keha c tusi...
+          and jdo joothi 😁 chaa peeti c 💕💕❤️
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div class="modal" id="modal">
+    <div class="modal-box">
+      <h2>Send a Mail 🌹</h2>
+      <p>Write a short message and send it on Gmail.</p>
+
+      <div style="margin-top:14px;">
+        <input id="receiverName" type="text" placeholder="Receiver Name"
+          style="width:100%; padding:12px; border-radius:12px; border:1px solid rgba(0,0,0,0.15); outline:none; margin-bottom:10px;">
+
+        <textarea id="messageBox" placeholder="Write your message..."
+          style="width:100%; padding:12px; border-radius:12px; border:1px solid rgba(0,0,0,0.15); outline:none; height:110px;"></textarea>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn btn-ghost" onclick="closeModal()">Cancel</button>
+        <button class="btn btn-primary" onclick="sendRose()">Send 🌹</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Made with ❤️ for My Rose • 🌹 Happy Rose Day 🌹
+  </footer>
+
+  <script>
+    function openModal(){
+      document.getElementById("modal").style.display = "flex";
+    }
+
+    function closeModal(){
+      document.getElementById("modal").style.display = "none";
+    }
+
+    function sendRose(){
+      const receiver = document.getElementById("receiverName").value.trim();
+      const message = document.getElementById("messageBox").value.trim();
+
+      if(receiver === "" || message === ""){
+        alert("Please fill Receiver Name and Message ❤️");
+        return;
+      }
+
+      const email = "sukhdeep1547@gmail.com";
+      const subject = encodeURIComponent("🌹 Happy Rose Day");
+      const body = encodeURIComponent("To: " + receiver + "\n\n" + message + "\n\n💌");
+
+      window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+
+      closeModal();
+    }
+
+    function scrollToSection(id){
+      document.getElementById(id).scrollIntoView({behavior:"smooth"});
+    }
+
+    // Close modal on outside click
+    window.addEventListener("click", function(e){
+      const modal = document.getElementById("modal");
+      if(e.target === modal){
+        closeModal();
+      }
+    });
+  </script>
+
+</body>
+</html>
